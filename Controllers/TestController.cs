@@ -4,17 +4,41 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NetCore.Exception.Models;
 
 namespace NetCore.Exception.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class TestController : ControllerBase
     {
+        [HttpPost]
+        public IActionResult EatApple([FromBody]Apple apple)
+        {
+            //string errorMessage = string.Empty;
+            //if (!ModelState.IsValid)
+            //{
+            //    foreach(var item in ModelState.Values)
+            //    {
+            //        foreach(var error in item.Errors)
+            //        {
+            //            errorMessage += error.ErrorMessage + "|";
+            //        }
+            //    }
+            //}
+            //if (!string.IsNullOrEmpty(errorMessage))
+            //{
+            //    return BadRequest(errorMessage);
+            //}
+            Console.WriteLine(apple);
+            return Ok();
+        }
+
         // GET: api/Test
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            throw new System.Exception("自定义异常！");
             return new string[] { "value1", "value2" };
         }
 

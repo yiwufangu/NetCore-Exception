@@ -6,7 +6,8 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>E:\code\Repos\NetCore-Exception\NetCore-Exception\NetCore.Exception.xml</DocumentationFile>
+    <DocumentationFile>D:\code\GitHub\NetCore-Exception\NetCore.Exception.xml</DocumentationFile>
+    <WarningLevel>1</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,5 +20,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>

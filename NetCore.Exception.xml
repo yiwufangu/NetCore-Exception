@@ -4,5 +4,10 @@
         <name>NetCore.Exception</name>
     </assembly>
     <members>
+        <member name="T:NetCore.Exception.Models.ReturnStatus">
+            <summary>
+            返回状态
+            </summary>
+        </member>
     </members>
 </doc>
