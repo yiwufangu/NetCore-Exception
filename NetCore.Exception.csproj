@@ -26,11 +26,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NetCore-Common\NetCore.Common\NetCore.Common.csproj" />
     <ProjectReference Include="..\NetCore-EntityFramework\NetCore-EntityFramework\NetCore.EntityFramework.csproj">
       <Private>true</Private>
       <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
     </ProjectReference>
-    <ProjectReference Include="..\NetCore.Common\NetCore.Common.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
