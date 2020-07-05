@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore.Exception", "NetCore.Exception.csproj", "{24CB0227-154D-4C20-BB28-3F370D6D70EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore.EntityFramework", "..\NetCore-EntityFramework\NetCore-EntityFramework\NetCore.EntityFramework.csproj", "{250346BF-BD46-4F34-8CC0-880433B77DC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore.EntityFramework", "..\NetCore-EntityFramework\NetCore-EntityFramework\NetCore.EntityFramework.csproj", "{250346BF-BD46-4F34-8CC0-880433B77DC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore.Common", "..\NetCore.Common\NetCore.Common.csproj", "{A770966D-5802-434D-A79C-87B53B455A03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{250346BF-BD46-4F34-8CC0-880433B77DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{250346BF-BD46-4F34-8CC0-880433B77DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{250346BF-BD46-4F34-8CC0-880433B77DC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A770966D-5802-434D-A79C-87B53B455A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A770966D-5802-434D-A79C-87B53B455A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A770966D-5802-434D-A79C-87B53B455A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A770966D-5802-434D-A79C-87B53B455A03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NetCore.EntityFramework;
+using NetCore.EntityFramework.Models;
 using NetCore.Exception.Models;
 
 namespace NetCore.Exception.Controllers
@@ -12,6 +14,22 @@ namespace NetCore.Exception.Controllers
     [ApiController]
     public class TestController : ControllerBase
     {
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            ArtistRepository repo = new ArtistRepository();
+            var all = repo.GetAll().ToList();
+
+            return Ok(all);
+        }
+
+        [HttpPost]
+        public bool InsertArtist([FromBody]Artist entity)
+        {
+            ArtistRepository repo = new ArtistRepository();
+            return repo.Add(entity);
+        }
+
         [HttpPost]
         public IActionResult EatApple([FromBody]Apple apple)
         {
@@ -36,8 +54,9 @@ namespace NetCore.Exception.Controllers
 
         // GET: api/Test
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<string> TestException()
         {
+            //int cnt = dbContext.Albums.Count();
             throw new System.Exception("自定义异常！");
             return new string[] { "value1", "value2" };
         }

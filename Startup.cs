@@ -8,6 +8,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using NetCore.Exception.Filters;
+using NetCore.EntityFramework;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using NetCore.Common;
+using MySql.Data.EntityFrameworkCore.Extensions;
 
 namespace NetCore.Exception
 {
@@ -24,12 +29,18 @@ namespace NetCore.Exception
                 options.Filters.Add<ApiResultFilterAttribute>();
             });
 
-           // Register the Swagger generator, defining 1 or more Swagger documents
-           services.AddSwaggerGen(c =>
+            services.AddDbContext<MusicStoreDbContext>(options =>
             {
-                c.ResolveConflictingActions(option => option.First());
+                options.UseMySql(Config.Current.DBConnString);
+            });
+
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
             });
+
+            services.AddMvc(c=> c.EnableEndpointRouting = false).SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +58,7 @@ namespace NetCore.Exception
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
+                c.RoutePrefix = string.Empty;
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
 
